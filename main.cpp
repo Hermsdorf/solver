@@ -37,19 +37,19 @@ int main()
     float n = 0.345;
     cout << "Somando o valo n = 0.345 as representação em pontoflutuante:"<<endl;
     cout <<"a = a + n :"<< endl;
-    a = a + n;
+    af = af + n;
     cout << "a = "; af.print(); cout << ";" << endl<<endl;
     
     cout << "b = b + n :"<< endl;
-    b = b + n;
+    bf = bf + n;
     cout << "b = "; bf.print(); cout << ";" << endl<<endl;
 
     cout << "c = c + n :"<< endl;
-    c = c + n;
+    cf = cf + n;
     cout << "c = "; cf.print(); cout << ";" << endl<<endl;
 
     cout << "d = d + n :"<< endl;
-    d = d + n;
+    df = df + n;
     cout << "d = "; df.print(); cout << ";" << endl<<endl;
 
     cout << "Fim do programa"<<endl<<endl;

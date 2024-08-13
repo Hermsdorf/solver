@@ -12,22 +12,39 @@ pfn::pfn( int mantissa)
 pfn::~pfn(){}
 
 
-void pfn::operator=(float val)
+pfn& pfn::operator=(float val)
 {
     set_val(val);
+    return *this;
 }
 
-void pfn::operator=(pfn p)
+pfn&  pfn::operator=(pfn p)
 {
     set_val(p.val);
+    return *this;
 }
 
-float pfn::operator+(float f)
+pfn pfn::operator+(pfn& p)
 {
-    float sum = val * pow(10,e);
-    return (sum + f);
+    float soma = this->val*pow(10,this->e) + p.val*pow(10,p.e);
+    pfn tmp = soma;
+    return tmp;
 }
 
+pfn& pfn::operator+= (pfn& p)
+{
+     float soma = this->val*pow(10,this->e) + p.val*pow(10,p.e);
+     set_val(soma);
+     return *this;
+
+}
+
+pfn pfn::operator+(float f)
+{
+    float soma = this->val*pow(10,this->e) + f;
+     pfn tmp = soma;
+    return tmp
+}
 
 void pfn::set_val(float val)
 {
