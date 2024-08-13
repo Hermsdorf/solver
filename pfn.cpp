@@ -22,6 +22,12 @@ void pfn::operator=(pfn p)
     set_val(p.val);
 }
 
+float pfn::operator+(float f)
+{
+    float sum = val * pow(10,e);
+    return (sum + f);
+}
+
 
 void pfn::set_val(float val)
 {
@@ -44,6 +50,7 @@ void pfn::set_val(float val)
     }
     else if(b != 0) // val não tem parte inteira
     {
+        a = b*10;
         while (a == 0) 
         {
             b = b*10; //desloca a virgula para a esquerda
@@ -59,8 +66,7 @@ void pfn::set_val(float val)
                                              // val = 0.1234 e m = 3
     int n = b * (pow(10,this->m));           // n   = 123 
     int x = b * (pow(10,(this->m)+1));       // x   = 1234 
-    int y = (b * (pow(10,this->m)));         
-    y *= 10;                                 // y   = 1230
+    int y = n*10;                            // y   = 1230
 
     int dva = x - y;                         // dva =    4
     if(dva > 5)
@@ -71,8 +77,8 @@ void pfn::set_val(float val)
     {
         if((n%2)!=0)
             n++;
-    }
-
+    }                            // Alguma coisa de errado até aqui.
+                                 // Se o valor for 1.0750 e m = 4 ele aredonda para 0.1076... depois arrumo isso 
     b = n ;
     b = b/ (pow(10,this->m));
     this->val = b*sinal;

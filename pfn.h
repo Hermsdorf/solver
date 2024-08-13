@@ -12,8 +12,8 @@ class pfn
 
     void operator= (float val);
     void operator=(pfn p);
-    pfn operator+ (pfn p);
-    pfn operator+ (float val);
+    //pfn operator+ (pfn p);
+    float operator+ (float f);
     void set_val(float val);
     void print();
 
