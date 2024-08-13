@@ -14,7 +14,8 @@ class pfn
     void operator=(pfn p);
     //pfn operator+ (pfn p);
     float operator+ (float f);
-    void set_val(float val);
+    void set_val(float val);  // Formata o valor de entrada para o formato de ponto flutuante
+                              // realizando os arredondamento necessário para o tamanho da mantissa;
     void print();
 
     private:
