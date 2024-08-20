@@ -84,8 +84,48 @@ int main()
     aux1-= n;
     cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
 
+    cout << "Teste Multiplicação"<<endl;
+
+    cout <<"aux1 = cf * n :"<< endl;
+    aux1 = cf * n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = cf * nf :"<< endl;
+    aux1 = cf * nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = 0; aux1*= n :"<< endl;
+    aux1 = 0;
+    aux1*= n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = 0; aux1*= nf :"<< endl;
+    aux1 = 0;
+    aux1*= nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
 
 
+    cout << "Teste Divisão"<<endl;
+
+    cout <<"aux1 = cf / n :"<< endl;
+    aux1 = cf / n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = cf / nf :"<< endl;
+    aux1 = cf / nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = 0; aux1/= n :"<< endl;
+    aux1 = 0;
+    aux1/= n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout <<"aux1 = 0; aux1/= nf :"<< endl;
+    aux1 = 0;
+    aux1/= nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    
 
     cout << "Fim do programa"<<endl<<endl;
 

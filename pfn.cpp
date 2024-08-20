@@ -93,6 +93,78 @@ pfn& pfn::operator-= (float f)
 }
 
 
+/*----------------------------------------------------------------------------------------------------*/
+
+pfn pfn::operator*(pfn& p)
+{
+    float produto = ( this->val*pow(10,this->e) )* (p.val*pow(10,p.e));
+     pfn tmp(this->m);
+     tmp = produto;
+    return tmp;
+}
+
+pfn pfn::operator*(float f)
+{
+    float produto = (this->val*pow(10,this->e)) * f;
+     pfn tmp(this->m);
+     tmp = produto;
+    return tmp;
+}
+
+pfn& pfn::operator*= (pfn& p)
+{
+     float produto = (this->val*pow(10,this->e)) * (p.val*pow(10,p.e));
+     set_val(produto);
+     return *this;
+
+}
+
+pfn& pfn::operator*= (float f)
+{
+     float produto = (this->val*pow(10,this->e)) * f;
+     set_val(produto);
+     return *this;
+
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+
+pfn pfn::operator/(pfn& p)
+{
+    float div = this->val*pow(10,this->e) / p.val*pow(10,p.e);
+     pfn tmp(this->m);
+     tmp = div;
+    return tmp;
+}
+
+pfn pfn::operator/(float f)
+{
+    float div = this->val*pow(10,this->e) / f;
+     pfn tmp(this->m);
+     tmp = div;
+    return tmp;
+}
+
+pfn& pfn::operator/= (pfn& p)
+{
+     float div = this->val*pow(10,this->e) / p.val*pow(10,p.e);
+     set_val(div);
+     return *this;
+
+}
+
+pfn& pfn::operator/= (float f)
+{
+     float div = this->val*pow(10,this->e) / f;
+     set_val(div);
+     return *this;
+
+}
+
+
+
+
+
 
 void pfn::set_val(float val)
 {
