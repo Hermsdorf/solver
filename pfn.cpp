@@ -27,7 +27,16 @@ pfn&  pfn::operator=(pfn p)
 pfn pfn::operator+(pfn& p)
 {
     float soma = this->val*pow(10,this->e) + p.val*pow(10,p.e);
-    pfn tmp = soma;
+     pfn tmp(this->m);
+     tmp = soma;
+    return tmp;
+}
+
+pfn pfn::operator+(float f)
+{
+    float soma = this->val*pow(10,this->e) + f;
+     pfn tmp(this->m);
+     tmp = soma;
     return tmp;
 }
 
@@ -39,12 +48,51 @@ pfn& pfn::operator+= (pfn& p)
 
 }
 
-pfn pfn::operator+(float f)
+pfn& pfn::operator+= (float f)
 {
-    float soma = this->val*pow(10,this->e) + f;
-     pfn tmp = soma;
-    return tmp
+     float soma = this->val*pow(10,this->e) + f;
+     set_val(soma);
+     return *this;
+
 }
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+
+pfn pfn::operator-(pfn& p)
+{
+    float soma = this->val*pow(10,this->e) - p.val*pow(10,p.e);
+     pfn tmp(this->m);
+     tmp = soma;
+    return tmp;
+}
+
+pfn pfn::operator-(float f)
+{
+    float soma = this->val*pow(10,this->e) - f;
+     pfn tmp(this->m);
+     tmp = soma;
+    return tmp;
+}
+
+pfn& pfn::operator-= (pfn& p)
+{
+     float soma = this->val*pow(10,this->e) - p.val*pow(10,p.e);
+     set_val(soma);
+     return *this;
+
+}
+
+pfn& pfn::operator-= (float f)
+{
+     float soma = this->val*pow(10,this->e) - f;
+     set_val(soma);
+     return *this;
+
+}
+
+
 
 void pfn::set_val(float val)
 {

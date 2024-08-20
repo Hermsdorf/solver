@@ -15,6 +15,7 @@ int main()
     pfn bf(2);
     pfn cf(4);
     pfn df(4);
+    pfn aux1(4);
 
     cout << "Valor convencionais: "<<endl;
     cout << "a = " << a << ";"<<endl;
@@ -26,6 +27,7 @@ int main()
     bf = b;
     cf = c;
     df = d;
+    aux1 = 0;
 
 
     cout << "Valor ponto flutuante: "<<endl;
@@ -35,23 +37,57 @@ int main()
     cout << "d = "; df.print(); cout << ";" << endl<<endl;
 
     float n = 0.345;
+    pfn nf(4);
+    nf = n;
     cout << "Somando o valo n = 0.345 as representação em pontoflutuante:"<<endl;
-    cout <<"a = a + n :"<< endl;
-    af = af + n;
-    cout << "a = "; af.print(); cout << ";" << endl<<endl;
+    cout <<"aux1 = af + n :"<< endl;
+    aux1 = af + n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
     
-    cout << "b = b + n :"<< endl;
-    bf = bf + n;
-    cout << "b = "; bf.print(); cout << ";" << endl<<endl;
+    cout << "aux1 = bf + n :"<< endl;
+    aux1 = bf + n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
 
-    cout << "c = c + n :"<< endl;
-    cf = cf + n;
-    cout << "c = "; cf.print(); cout << ";" << endl<<endl;
+    cout << "aux1 = cf + nf :"<< endl;
+    aux1 = cf + nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
 
-    cout << "d = d + n :"<< endl;
-    df = df + n;
-    cout << "d = "; df.print(); cout << ";" << endl<<endl;
+    cout << "aux1 = 0; aux1+= nf :"<< endl;
+    aux1 = 0; 
+    aux1+= nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout << "aux1 = 0; aux1+= n :"<< endl;
+    aux1 = 0; 
+    aux1+= n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+
+
+    cout << "Teste Subtração"<<endl;
+
+    cout <<"aux1 = cf - n :"<< endl;
+    aux1 = cf - n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+    
+    cout << "aux1 = cf - nf :"<< endl;
+    aux1 = cf - nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout << "aux1 = 0; aux1-= nf :"<< endl;
+    aux1 = 0;
+    aux1-= nf;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+    cout << "aux1 = 0; aux1-= n :"<< endl;
+    aux1 = 0;
+    aux1-= n;
+    cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
+
+
+
 
     cout << "Fim do programa"<<endl<<endl;
+
 
 }
