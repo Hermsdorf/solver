@@ -1,3 +1,6 @@
+#ifndef PFN_H__
+#define PFN_H__
+
 #include <iostream>
 #include <math.h>
 #include <iomanip>
@@ -12,7 +15,6 @@ class pfn
 
     pfn& operator= (float val);
     pfn& operator=(pfn p);
-    //pfn operator+ (pfn p);
     pfn operator+ (float f);
     pfn operator+ (pfn& a);
     pfn& operator+= (pfn& a);
@@ -48,5 +50,6 @@ class pfn
 
 };
 
+#endif
 //friend ostream& operator<<(ostream& out,pfn& p);
 
