@@ -36,7 +36,8 @@ class pfn
     pfn& operator/= (float f);
     
 
-
+    friend ostream& operator<<(ostream& out,pfn& p);
+    friend istream& operator>>(istream& in,pfn& p);
 
     void set_val(float val);  // Formata o valor de entrada para o formato de ponto flutuante
                               // realizando os arredondamento necessário para o tamanho da mantissa;

@@ -162,7 +162,21 @@ pfn& pfn::operator/= (float f)
 }
 
 
+/*----------------------------------------------------------------------------------------------------*/
 
+ostream& operator<<(ostream& out,pfn& p)
+{
+    p.print();
+    return out;
+}
+
+istream& operator>>(istream& in,pfn& p)
+{
+    float val;
+    in >> val;
+    p.set_val(val);
+    return in;
+}
 
 
 

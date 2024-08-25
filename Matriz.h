@@ -2,6 +2,7 @@
 #define MATRIZ_H__
 
 #include<vector>
+using namespace std;
 
 template <class Type>
 class Matriz
