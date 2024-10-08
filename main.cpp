@@ -128,11 +128,15 @@ int main()
     cout << "aux1 = "; aux1.print(); cout << ";" << endl<<endl;
 
     cout<< "Teste Matriz"<<endl;
-    vector<int> v = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-    Matriz<int> m(4,4,v);
+    vector<float> v = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+    Matriz<float> m(4,4,v);
     m.print();
-    cout<< m(0,0)<<endl;
-    
+    cout<< "m.L = "<<endl;
+    m.L().print();
+    cout << endl;
+    cout<< "m.U = "<<endl;
+    m.U().print();
+    cout << endl;
 
     cout << "Fim do programa"<<endl<<endl;
 
