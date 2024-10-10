@@ -104,22 +104,23 @@ void Matriz<T>::print()
 template <class T>
 Matriz<T> Matriz<T>::L()
 {
-        Matriz<T> L(l, c);
-        Matriz<T> U(l, c);
+    Matriz<T> L(l, c);
     if (this->lower.empty())
     {
+        Matriz<T> U(l, c);
         U.Data() = this->v;
         T m, n, d;
         for (int i = 0; i < c; i++)
         {
             d = U(i, i);
-            for (int j = 1 + i; j < l; j++)
+            for (int j = i + 1; j < l; j++)
             {
-                m = (this->operator()(j, i) / d);
+                m = (U(j, i) / d);
                 L(j, i) = m;
-                for(int k = 0; k < c; k++)
+                for (int k = i; k < c; k++)
                 {
                     n = U(j, k) - m * U(i, k);
+                    cout << n << endl;
                     U(j, k) = n;
                 }
             }
@@ -138,20 +139,20 @@ Matriz<T> Matriz<T>::L()
 template <class T>
 Matriz<T> Matriz<T>::U()
 {
-        Matriz<T> L(l, c);
-        Matriz<T> U(l, c);
+    Matriz<T> U(l, c, this->upper);
     if (this->upper.empty())
     {
-        U.Data() = this->v;
+        Matriz<T> L(l, c, lower);
+        U.Data() = this->Data();
         T m, n, d;
         for (int i = 0; i < c; i++)
         {
             d = U(i, i);
             for (int j = 1 + i; j < l; j++)
             {
-                m = (this->operator()(j, i) / d);
+                m = (U(j, i) / d);
                 L(j, i) = m;
-                for(int k = i; k < c; k++)
+                for (int k = i; k < c; k++)
                 {
                     n = U(j, k) - (m * U(i, k));
                     U(j, k) = n;
@@ -163,7 +164,7 @@ Matriz<T> Matriz<T>::U()
     }
     else
     {
-        Matriz<T> U(l, c, upper);
+        Matriz<T> U(l, c, this->upper);
     }
 
     return U;
