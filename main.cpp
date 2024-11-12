@@ -138,6 +138,14 @@ int main()
     m.U().print();
     cout << endl;
 
+    cout<< "Teste Cholesky"<<endl;
+    vector<float> v2 = {4,-2,2,-2,10,-7,2,-7,30};
+    Matriz<float> m2(3,3,v2);
+    m2.print();
+    cout<< "m2.G = "<<endl;
+    m2.G().print();
+    cout << endl;
+
     cout << "Fim do programa"<<endl<<endl;
 
 

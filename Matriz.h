@@ -2,11 +2,13 @@
 #define MATRIZ_H__
 
 #include <vector>
-#include <iostream>
+//#include <iostream>
 #include <algorithm>
 #include <string>
-#include "operadores.h"
+#include <cmath>
+
 using namespace std;
+
 
 template <class T>
 class Matriz
@@ -22,6 +24,7 @@ public:
 
     Matriz<T> L();
     Matriz<T> U();
+    Matriz<T> G();
 
     vector<T> &Lower() { return lower; };
     vector<T> &Upper() { return upper; };
@@ -34,6 +37,7 @@ private:
     vector<T> v;
     vector<T> lower;
     vector<T> upper;
+    vector<T> g;
 };
 template <class T>
 Matriz<T>::Matriz()
@@ -90,14 +94,14 @@ void Matriz<T>::print()
 {
     for (int i = 0; i < l; i++)
     {
-        cout << "| ";
+        std::cout << "| ";
         for (int j = 0; j < c; j++)
         {
-            cout << this->operator()(i, j) << " ";
+            std::cout << this->operator()(i, j) << " ";
             // v[i * c + j] << " ";
         }
-        cout << " |";
-        cout << endl;
+        std::cout << " |";
+        std::cout << endl;
     }
 }
 
@@ -168,6 +172,37 @@ Matriz<T> Matriz<T>::U()
     }
 
     return U;
+}
+
+template <class T>
+Matriz<T> Matriz<T>::G()
+{
+    Matriz<T> G(this->l, this->c);
+    int n = this->l;
+    for (int j = 0; j < n; j++)
+    {
+        T sum = 0;
+        for (int k = 0; k < j-1; k++)
+        {
+            T val = G(j, k);
+            sum += pow(val, 2);
+        }
+
+        T val2 = this->operator()(j, j) - sum;
+        G(j, j) = sqrt(val2);
+        for (int i = j + 1; i < n; i++)
+        {
+            T sum2 = 0;
+            for (int k = 0; k < j-1; k++)
+            {
+                sum2 += G(i, k) * G(j, k);
+            }
+            G(i, j) = (this->operator()(i, j) - sum2) / G(j, j);
+        }
+    }
+    this->g = G.Data();
+
+    return G;
 }
 
 // template <class T>
